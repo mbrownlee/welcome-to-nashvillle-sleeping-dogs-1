@@ -1,54 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sleeping Dogs Nashville Tours</title>
-    <link rel="stylesheet" href="/styles/main.css" />
-  </head>
-  <body>
-    <header>
-      <h1>Sleeping Dogs Nashville Tours</h1>
-    </header>
-    <article class="search-container__parks">
-      <h3>Fetch It:</h3>
-      <div class="search-container__parks">
-        <input
-          id="search-input__parks"
-          type="text"
-          placeholder="Go for a walk"
-        />
-        <button id="search-btn__art">Fetch</button>
-      </div>
-      <div class="search-container__art">
-        <input
-          id="search-input__art"
-          type="text"
-          placeholder="Chew on this art"
-        />
-        <button id="search-btn__restaurants">Fetch</button>
-      </div>
-      <div class="search-container__restaurants">
-        <input
-          id="search-input__restaurants"
-          type="text"
-          placeholder="Beg for human food"
-        />
-        <button id="search-btn__concerts">Fetch</button>
-      </div>
-      <div class="search-container__concerts">
-        <input
-          id="search-input__concerts"
-          type="text"
-          placeholder="Howl all night"
-        />
-        <button id="search-btn__concerts">Fetch</button>
-      </div>
-    </article>
-    <article class="search-results__container">
-      <h3>Fetch Results:</h3>
-    </article>
-    <aside class="itinerary"><h3>Itinerary:</h3></aside>
-    <footer></footer>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sleeping Dogs Nashville Tours</title>
+		<link rel="stylesheet" href="/styles/main.css" />
+	</head>
+	<body>
+		<header>
+			<h1>Sleeping Dogs Nashville Tours</h1>
+		</header>
+		<article class="search-container__parks">
+			<h3>Fetch It:</h3>
+			<div class="search-container__parks">
+				<input
+					id="search-input__parks"
+					type="text"
+					placeholder="Go for a walk"
+				/>
+				<button id="search-btn__park">Fetch</button>
+			</div>
+			<div class="search-container__art">
+				<input
+					id="search-input__art"
+					type="text"
+					placeholder="Chew on this art"
+				/>
+				<button id="search-btn__restaurants">Fetch</button>
+			</div>
+			<div class="search-container__restaurants">
+				<input
+					id="search-input__restaurants"
+					type="text"
+					placeholder="Beg for human food"
+				/>
+				<button id="search-btn__concerts">Fetch</button>
+			</div>
+			<div class="search-container__concerts">
+				<input
+					id="search-input__concerts"
+					type="text"
+					placeholder="Howl all night"
+				/>
+				<button id="search-btn__concerts">Fetch</button>
+			</div>
+		</article>
+		<article class="search-results__container">
+			<h3>Fetch Results:</h3>
+		</article>
+		<aside class="itinerary"><h3>Itinerary:</h3></aside>
+		<footer></footer>
+		<script src="/scripts/parks/park.js"></script>
+		<script src="/scripts/parks/parksAPI.js"></script>
+		<script src="/scripts/parks/parkForm.js"></script>
+	</body>
 </html>
