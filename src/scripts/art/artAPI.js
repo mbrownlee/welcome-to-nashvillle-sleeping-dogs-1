@@ -12,10 +12,7 @@ document.querySelector("#search-btn__art").addEventListener("click", () => {
 			console.log(parsedArt);
 			//RETURNS AN ARRAY. THEN NEED TO ITERATE THE ARRAY.
 			for (let i = 0; i < parsedArt.length; i++) {
-            // parse the address into a to be dot notted into
-            parsedArt[i].newAddress = JSON.parse(
-            parsedArt[i].mapped_location.human_address
-          );
+           
           //I NEED TO CONVERT EVERY OBJECT TO A STRING. FUNCTION MAKEPARKLIST DOES THAT FOR ME.
           parsedArt[i].id = i;
           const artList = makeArtListComponent(parsedArt[i]);
@@ -25,12 +22,12 @@ document.querySelector("#search-btn__art").addEventListener("click", () => {
 		});
 });
 //CONVERTS OBJECT FROM INSIDE THE ARRAY RETURNED FROM FETCH INTO A STRING
-function makeArtList(artwork) {
+function makeArtListComponent(artwork) {
     return `
             <section>
-                <div id="art__${art.id}"><a href="${artwork.page_link.url}" target="_blank">${artwork.artwork}</a></div>
+                <div id="art__${artwork.id}"><a href="${artwork.page_link.url}" target="_blank">${artwork.artwork}</a></div>
                 <div>${artwork.description}</div>
 				<div>Location: ${artwork.location}</div>
-                <button id="btn-art__${art.id}">Save</button>
+                <button id="btn-art__${artwork.id}">Save</button>
             </section>`;
 }
