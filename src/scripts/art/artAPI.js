@@ -11,10 +11,14 @@ document.querySelector("#search-btn__art").addEventListener("click", () => {
 			//THIS IS THE ONLY PLACE WHERE I HAVE ACCESS TO THE DATA FROM THE API
 			console.log(parsedArt);
 			//RETURNS AN ARRAY. THEN NEED TO ITERATE THE ARRAY.
-			for (const artwork of parsedArt) {
-			
-				//I NEED TO CONVERT EVERY OBJECT TO A STRING. FUNCTION MAKEPARKLIST DOES THAT FOR ME.
-				const artList = makeArtList(artwork);
+			for (let i = 0; i < parsedArt.length; i++) {
+            // parse the address into a to be dot notted into
+            parsedArt[i].newAddress = JSON.parse(
+            parsedArt[i].mapped_location.human_address
+          );
+          //I NEED TO CONVERT EVERY OBJECT TO A STRING. FUNCTION MAKEPARKLIST DOES THAT FOR ME.
+          parsedArt[i].id = i;
+          const artList = makeArtListComponent(parsedArt[i]);
 				//NOW I HAVE SRING REPRESENTATION I NEED TO STORE IT IN THE QUERY ABOVE
 				artAPI.innerHTML += artList;
 			}
@@ -22,9 +26,11 @@ document.querySelector("#search-btn__art").addEventListener("click", () => {
 });
 //CONVERTS OBJECT FROM INSIDE THE ARRAY RETURNED FROM FETCH INTO A STRING
 function makeArtList(artwork) {
-	return `
-                <h2><a href="${artwork.page_link.url}" target="_blank">${artwork.artwork}</a></h2>
-                <p>${artwork.description}</p>
-				<h4>Location: ${artwork.location}</h4>
-				<button id="save-btn__art">Save</button>`;
+    return `
+            <section>
+                <div id="art__${art.id}"><a href="${artwork.page_link.url}" target="_blank">${artwork.artwork}</a></div>
+                <div>${artwork.description}</div>
+				<div>Location: ${artwork.location}</div>
+                <button id="btn-art__${art.id}">Save</button>
+            </section>`;
 }
