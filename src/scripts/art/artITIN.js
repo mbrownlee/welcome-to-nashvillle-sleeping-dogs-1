@@ -1,6 +1,6 @@
 //dependencies: artAPI.js
 
-const saveResults = document
+const saveArtResults = document
   .querySelector(".search-results__container")
   .addEventListener("click", (saveEvent) => {
     if (saveEvent.target.id.includes("btn-art")) {
