@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Sleeping Dogs Nashville Tours</title>
-		<link rel="stylesheet" href="/styles/main.css" />
+		<link rel="stylesheet" href="styles/main.css" />
 	</head>
 	<body>
 		<header>
@@ -13,11 +13,7 @@
 		<article class="search-container__parks">
 			<h3>Fetch It:</h3>
 			<div class="search-container__parks">
-				<input
-					id="search-input__parks"
-					type="text"
-					placeholder="Park Name"
-				/>
+				<input id="search-input__parks" type="text" placeholder="Park Name" />
 				<button id="search-btn__parks">Fetch</button>
 			</div>
 			<div class="search-container__art">
@@ -37,18 +33,15 @@
 				<button id="search-btn__restaurants">Fetch</button>
 			</div>
 			<div class="search-container__concerts">
-				<input
-					id="search-input__concerts"
-					type="text"
-					placeholder="Concerts"
-				/>
+				<input id="search-input__concerts" type="text" placeholder="Concerts" />
 				<button id="search-btn__concerts">Fetch</button>
 			</div>
 		</article>
 		<article class="search-results__container">
 			<h3>Fetch Results:</h3>
 		</article>
-		<aside class="itinerary"><h3>Itinerary:</h3>
+		<aside class="itinerary">
+			<h3>Itinerary:</h3>
 			<article class="park-itinerary__container"></article>
 			<article class="art-itinerary__container"></article>
 			<article class="restaurants-itinerary__container"></article>
@@ -56,7 +49,7 @@
 		</aside>
 		<footer></footer>
 		<script src="/src/scripts/parks/parksAPI.js"></script>
+		<script src="scripts/parks/parkITIN.js"></script>
 		<script src="/src/scripts/art/artAPI.js"></script>
-
 	</body>
 </html>
