@@ -11,21 +11,26 @@ document.querySelector("#search-btn__parks").addEventListener("click", () => {
 			//THIS IS THE ONLY PLACE WHERE I HAVE ACCESS TO THE DATA FROM THE API
 			console.log(parsedParks);
 			//RETURNS AN ARRAY. THEN NEED TO ITERATE THE ARRAY.
-			for (const park of parsedParks) {
+			for (let i = 0; i < parsedParks.length; i++) {
 				// parse the address into a to be dot notted into
-				park.newAddress = JSON.parse(park.mapped_location.human_address);
+				parsedParks[i].newAddress = JSON.parse(
+					parsedParks[i].mapped_location.human_address
+				);
 				//I NEED TO CONVERT EVERY OBJECT TO A STRING. FUNCTION MAKEPARKLIST DOES THAT FOR ME.
-				const parkList = makeParkList(park);
+				parsedParks[i].id = i;
+				const parkList = makeParkListComponent(parsedParks[i]);
 				//NOW I HAVE SRING REPRESENTATION I NEED TO STORE IT IN THE QUERY ABOVE
 				parksAPI.innerHTML += parkList;
 			}
 		});
 });
 //CONVERTS OBJECT FROM INSIDE THE ARRAY RETURNED FROM FETCH INTO A STRING
-function makeParkList(park) {
+function makeParkListComponent(park) {
 	return `
-				<h2>${park.park_name}</h2>
-				<p>Doge friendly: ${park.dog_park}</p>
-				<p>${park.newAddress.address} ${park.newAddress.city} ${park.newAddress.state}</p>
-				<button id="save-btn__parks">Save</button>`;
+			<section>
+				<div id="park__${park.id}">${park.park_name}</div>
+				<div>Doge friendly: ${park.dog_park}</div>
+				<div>${park.newAddress.address} ${park.newAddress.city} ${park.newAddress.state}</div>
+				<button id="btn-parks__${park.id}">Save</button>
+			</section>`;
 }
