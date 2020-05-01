@@ -27,8 +27,8 @@ document.querySelector("#search-btn__parks").addEventListener("click", () => {
 //CONVERTS OBJECT FROM INSIDE THE ARRAY RETURNED FROM FETCH INTO A STRING
 function makeParkListComponent(park) {
   return `
-			<section>
-				<div id="park__${park.id}">${park.park_name}</div>
+			<section class="park-result">
+				<div class="park-name" id="park__${park.id}">${park.park_name}</div>
 				<div>Doge friendly: ${park.dog_park}</div>
 				<div>${park.newAddress.address} ${park.newAddress.city} ${park.newAddress.state}</div>
 				<button id="btn-parks__${park.id}">Save</button>
