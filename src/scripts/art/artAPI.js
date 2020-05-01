@@ -12,10 +12,9 @@ document.querySelector("#search-btn__art").addEventListener("click", () => {
 			console.log(parsedArt);
 			//RETURNS AN ARRAY. THEN NEED TO ITERATE THE ARRAY.
 			for (let i = 0; i < parsedArt.length; i++) {
-           
-          //I NEED TO CONVERT EVERY OBJECT TO A STRING. FUNCTION MAKEPARKLIST DOES THAT FOR ME.
-          parsedArt[i].id = i;
-          const artList = makeArtListComponent(parsedArt[i]);
+				//I NEED TO CONVERT EVERY OBJECT TO A STRING. FUNCTION MAKEPARKLIST DOES THAT FOR ME.
+				parsedArt[i].id = i;
+				const artList = makeArtListComponent(parsedArt[i]);
 				//NOW I HAVE SRING REPRESENTATION I NEED TO STORE IT IN THE QUERY ABOVE
 				artAPI.innerHTML += artList;
 			}
@@ -23,11 +22,11 @@ document.querySelector("#search-btn__art").addEventListener("click", () => {
 });
 //CONVERTS OBJECT FROM INSIDE THE ARRAY RETURNED FROM FETCH INTO A STRING
 function makeArtListComponent(artwork) {
-    return `
-            <section>
-                <div id="art__${artwork.id}"><a href="${artwork.page_link.url}" target="_blank">${artwork.artwork}</a></div>
+	return `
+            <section class="art-result">
+                <div class="art-name" id="art__${artwork.id}"><a href="${artwork.page_link.url}" target="_blank">${artwork.artwork}</a></div>
                 <div>${artwork.description}</div>
-				<div>Location: ${artwork.location}</div>
+								<div>Location: ${artwork.location}</div>
                 <button id="btn-art__${artwork.id}">Save</button>
             </section>`;
 }

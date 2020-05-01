@@ -1,42 +1,59 @@
 body {
-  background-color: #e0d0c1;
-  /* background-image: ;
-  height: 500px;
-  background-position: center;
-  background-repeat: no-repeat;
-  /* background-size: cover;	 */
+	background-color: #e0d0c1;
+}
+
+.header-style {
+	background-image: url(/src/images/image.png);
+	height: 200px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.title-style {
+	color: white;
+	margin-top: 50px;
 }
 
 .flexbox {
-  display: flex;
+	display: flex;
+	max-height: 700px;
 }
 
-.flexResults {
-  margin-left: 25px;
-  min-height: 800px;
-  min-width: 250px;
+.flexResults::-webkit-scrollbar {
+	margin-left: 25px;
+	min-width: 450px;
+	overflow: hidden;
+	overflow: scroll;
+	overflow: hidden;
+	display: none;
 }
 
-.park-result {
-  background-color: #f4b860;
-  margin: 10px;
-  border: 10px double #828e82;
-  border-radius: 15px 015px 015px 15px;
+.park-result,
+.art-result,
+.concert-result {
+	background-color: #f4b860;
+	margin: 10px;
+	padding: 8px;
+	border: 10px double #828e82;
+	border-radius: 15px 015px 015px 15px;
+	min-width: 450px;
 }
 
-.park-name {
-  font-size: x-large;
+.park-name,
+.art-name,
+.concert-name {
+	font-size: x-large;
 }
 
 .park-itinerary__container {
-  font-size: x-large;
+	font-size: x-large;
 }
 
 .itinerary-container {
-  border: 10px double #828e82;
-  border-radius: 15px 015px 015px 15px;
-  min-height: 800px;
-  min-width: 250px;
-  margin: 10px;
-  background-color: #f4b860;
+	border: 10px double #828e82;
+	border-radius: 15px 015px 015px 15px;
+	min-height: 600px;
+	min-width: 250px;
+	margin: 10px;
+	background-color: #f4b860;
 }
