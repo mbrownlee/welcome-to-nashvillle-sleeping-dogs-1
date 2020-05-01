@@ -1,3 +1,42 @@
 body {
-	background-color: goldenrod;
+  background-color: #e0d0c1;
+  /* background-image: ;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* background-size: cover;	 */
+}
+
+.flexbox {
+  display: flex;
+}
+
+.flexResults {
+  margin-left: 25px;
+  min-height: 800px;
+  min-width: 250px;
+}
+
+.park-result {
+  background-color: #f4b860;
+  margin: 10px;
+  border: 10px double #828e82;
+  border-radius: 15px 015px 015px 15px;
+}
+
+.park-name {
+  font-size: x-large;
+}
+
+.park-itinerary__container {
+  font-size: x-large;
+}
+
+.itinerary-container {
+  border: 10px double #828e82;
+  border-radius: 15px 015px 015px 15px;
+  min-height: 800px;
+  min-width: 250px;
+  margin: 10px;
+  background-color: #f4b860;
 }
